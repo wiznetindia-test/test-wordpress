@@ -37,6 +37,10 @@ define( 'DB_CHARSET', 'utf8mb4' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
+/** Force SSL Connection to Azure Database for MySQL server */
+define(‘MYSQL_CLIENT_FLAGS’, MYSQLI_CLIENT_SSL);
+define(‘MYSQL_SSL_CA’, getenv(‘MYSQL_SSL_CA’));
+define(‘MYSQL_CLIENT_FLAGS’, MYSQLI_CLIENT_SSL | MYSQLI_CLIENT_SSL_DONT_VERIFY_SERVER_CERT )
 /**#@+
  * Authentication Unique Keys and Salts.
  *
